@@ -3,12 +3,9 @@
 {% block title %}Список машин{% endblock %}
 
 {% block content %}
-    <div class="container">
-
-    </div>
-    {% for car in cars_list %}
-        <a class="car_list_element" href="/cars/{{ car.id }}">{{ car }}</a>
-    {% endfor %}
-
-
+    <ol class="list_cars">
+        {% for car in cars_list %}
+            <li><a class="car_list_element" href="/cars/{{ car.id }}">{{ car }}</a></li>
+        {% endfor %}
+    </ol>
 {% endblock %}
