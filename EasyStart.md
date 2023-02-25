@@ -13,6 +13,7 @@
 7.3. Установить пакет python-decouple  
 7.4. Установить пакет Pillow  
 7.5. Установить пакет psycopg2  
+7.6. Установить пакет psycopg2-binary  
 8. Нажать Terminal в нижней части экрана на панели  
 8.1. ввести: **pip install django**
 
