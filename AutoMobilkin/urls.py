@@ -10,6 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello),
     path('cars/', views.cars),
+    path('cars/', views.cars),
     path('cars/<int:id>/', views.get_car)
 ]
 

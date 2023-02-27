@@ -3,9 +3,38 @@
 {% block title %}Список машин{% endblock %}
 
 {% block content %}
+    <form method="get">
+        <label for="count_on_page">Count on page</label>
+        <input id="count_on_page" type="number" name="count_on_page" value="{{ count_on_page }}">
+    </form>
     <ol class="list_cars">
         {% for car in cars_list %}
-            <li><a class="car_list_element" href="/cars/{{ car.id }}">{{ car }}</a></li>
+            <div class="cars_list_wrapper">
+                <div class="cars_list_inner">
+                    <img class="car_list_inner_image" src="{{ car.image.url }}" alt="not loaded">
+                    <div class="car_list_inner_car-info">
+                        <div class="car_list_inner_car-info_block car_list_inner_car-info_specifications">
+                            <span class="car_list_block_inner_car-title">{{ car.model_car_generation.model_car }}</span>
+                            <div class="car_list_inner_car-info_specifications_info">
+                                <div class="car_list_inner_car-info_specifications_info_block car_list_inner_car-info_specifications_info_block_left">
+                                    <span>{{ car.engine_volume }} л / {{ car.engine_power }} л.с / {{ car.engine_type }}</span>
+                                    <span>{{ car.transmission_type }}</span>
+                                    <span>{{ car.body_type }}</span>
+                                </div>
+                                <div class="car_list_inner_car-info_specifications_info_block car_list_inner_car-info_specifications_info_block_right">
+                                    <span>{{ car.drive_type }}</span>
+                                    <span>{{ car.color }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="car_list_inner_car-info_block car_list_inner_car-info_price">{{ car.price_rubles }} ₽</span>
+                        <span class="car_list_inner_car-info_block car_list_inner_car-info_year">{{ car.year_of_release }}</span>
+                        <span class="car_list_inner_car-info_block car_list_inner_car-info_odometer">{{ car.odometer }} км</span>
+                    </div>
+                </div>
+                <a class="cars_list_block_link" href="/cars/{{ car.id }}">Подробнее</a>
+            </div>
+            <hr>
         {% endfor %}
     </ol>
 {% endblock %}

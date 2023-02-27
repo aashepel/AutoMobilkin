@@ -18,8 +18,12 @@ def index(request):
 
 
 def cars(request):
-    cars_list = Car.objects.all()
-    return render(request, 'cars.html', {'cars_list': cars_list})
+    count_on_page = request.GET.get('count_on_page')
+    if count_on_page is None:
+        cars_list = Car.objects.all()
+    else:
+        cars_list = Car.objects.all()[:int(count_on_page)]
+    return render(request, 'cars.html', {'cars_list': cars_list, 'count_on_page': count_on_page})
 
 
 def get_car(request, id):
