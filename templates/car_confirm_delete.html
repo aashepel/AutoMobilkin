@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block title %}Подтверждение удаления записи{% endblock %}
+
+{% block content %}
+    <div class="wrapper-block">
+        <h2>Вы уверены, что хотите удалить запись '{{ car_info }}'?</h2>
+        <div class="block_yes-no">
+            <a class="block_yes-no_yes" href="/cars/delete/{{ car_info.id }}">Да</a>
+            <a class="block_yes-no_no" href="/cars">Нет</a>
+        </div>
+    </div>
+{% endblock %}

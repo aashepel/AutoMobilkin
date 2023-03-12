@@ -11,7 +11,9 @@ urlpatterns = [
     path('hello/', views.hello),
     path('cars/', views.cars),
     path('cars/', views.cars),
-    path('cars/<int:id>/', views.get_car)
+    path('cars/view/<int:id>/', views.get_car),
+    path('cars/delete/<int:id>', views.delete_car),
+    path('cars/delete_confirm/<int:id>', views.delete_confirm_delete_view)
 ]
 
 if settings.DEBUG:

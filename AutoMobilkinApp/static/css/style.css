@@ -138,3 +138,29 @@
 {
     width: 10vw;
 }
+
+.cars_list_block_remove_link
+{
+    color: red;
+}
+
+.block_yes-no
+{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    color: black;
+}
+
+.block_yes-no_yes
+{
+    text-decoration: none;
+    color: black;
+}
+
+.block_yes-no_no
+{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}

@@ -4,8 +4,11 @@
 
 {% block content %}
     <form method="get">
+        <label for="page">Page</label>
+        <input id="page" type="number" required name="page" value="{{ page }}">
         <label for="count_on_page">Count on page</label>
-        <input id="count_on_page" type="number" name="count_on_page" value="{{ count_on_page }}">
+        <input id="count_on_page" required type="number" name="count_on_page" value="{{ count_on_page }}">
+        <input type="submit" value="OK">
     </form>
     <ol class="list_cars">
         {% for car in cars_list %}
@@ -32,7 +35,8 @@
                         <span class="car_list_inner_car-info_block car_list_inner_car-info_odometer">{{ car.odometer }} км</span>
                     </div>
                 </div>
-                <a class="cars_list_block_link" href="/cars/{{ car.id }}">Подробнее</a>
+                <a class="cars_list_block_link" href="/cars/view/{{ car.id }}">Подробнее</a>
+                <a class="cars_list_block_remove_link" href="/cars/delete_confirm/{{ car.id }}">Удалить</a>
             </div>
             <hr>
         {% endfor %}
